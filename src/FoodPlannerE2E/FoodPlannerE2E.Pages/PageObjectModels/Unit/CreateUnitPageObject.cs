@@ -5,7 +5,7 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
 {
     public class CreateUnitPageObject : BasePageObject
     {
-        protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(_locators.NameTextBox)); }
+        protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(_locators.NameTextInput)); }
         protected IWebElement NameErrorMessage { get => _driver.FindElement(By.XPath(_locators.NameErrorMessage)); }
         protected IWebElement SendButton { get => _driver.FindElement(By.XPath(_locators.SendButton)); }
 

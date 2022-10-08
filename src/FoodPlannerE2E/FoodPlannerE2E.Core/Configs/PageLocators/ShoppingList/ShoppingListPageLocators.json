@@ -1,3 +1,8 @@
 {
-
+  "startDateInput": "//input[@locator='shoppingListStartDate']",
+  "endDateInput": "//input[@locator='shoppingListEndDate']",
+  "peopleCountNumberInput": "//input[@locator='shoppingListPeopleCount']",
+  "listTypeDropdown": "//select[@locator='shoppingListType']",
+  "sendButton": "//button[@locator='shoppingListSendButton']",
+  "formErrorMessages": "//ul[@locator='shoppingListFormErrors']"
 }
