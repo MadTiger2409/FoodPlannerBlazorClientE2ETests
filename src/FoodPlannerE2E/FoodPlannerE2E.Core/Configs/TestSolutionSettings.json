@@ -1,0 +1,4 @@
+{
+  "applicationBaseHttpUrl": "http://localhost:5020",
+  "applicationBaseHttpsUrl": "https://localhost:5021"
+}

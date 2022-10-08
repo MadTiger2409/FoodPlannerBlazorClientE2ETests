@@ -1,0 +1,5 @@
+{
+  "bodyDiv": "//div[@locator='responseStatusCard']",
+  "titleHeader": "//h5[@locator='responseStatusTitle']",
+  "closeButton": "//button[@locator='responseStatusCloseButton']"
+}

@@ -1,0 +1,5 @@
+{
+  "nameTextBox": "//input[@locator='unitNameText']",
+  "nameErrorMessage": "//div[@locator='unitNameError']",
+  "sendButton": "//button[@locator='unitSendButton']"
+}
