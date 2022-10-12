@@ -1,0 +1,8 @@
+{
+  "nameTextInput": "//input[@locator='productNameText']",
+  "nameErrorMessage": "//div[@locator='productNameError']",
+  "categoryTypeahead": "//input[@locator='categorySelector']",
+  "typeaheadResults": "//div[@class='blazored-typeahead__results']",
+  "categoryErrorMessage": "//div[@locator='productCategoryItemError']",
+  "sendButton": "//button[@locator='productSendButton']"
+}

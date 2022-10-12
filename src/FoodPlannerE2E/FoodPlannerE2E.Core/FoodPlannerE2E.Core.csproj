@@ -7,10 +7,34 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Compile Update="Configs\TestSolutionSettings.cs">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Update="Configs\PageLocators\PlannedMeal\CreatePlannedMealPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Product\CreateProductPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Product\ProductsListPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Configs\PageLocators\Shared\ResponseStatusPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="Configs\PageLocators\ShoppingList\ShoppingListPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Configs\PageLocators\Unit\CreateUnitPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Unit\EditUnitPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Unit\UnitsListPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Configs\TestSolutionSettings.json">
