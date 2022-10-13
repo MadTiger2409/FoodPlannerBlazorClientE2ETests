@@ -16,6 +16,9 @@
 	  <None Update="Configs\PageLocators\PlannedMeal\CreatePlannedMealPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
+	  <None Update="Configs\PageLocators\PlannedMeal\PlannedMealsListPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Configs\PageLocators\Product\CreateProductPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>

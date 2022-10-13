@@ -1,0 +1,6 @@
+{
+  "startDateInput": "//input[@locator='plannedMealsStartDateInput']",
+  "endDateInput": "//input[@locator='plannedMealsEndDateInput']",
+  "sendButton": "//button[@lcoator='plannedMealsSendButton']",
+  "formErrorMessages": "//ul[@locator='plannedMealsListFormErrors']"
+}
