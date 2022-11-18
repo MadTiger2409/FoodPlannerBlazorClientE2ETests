@@ -13,6 +13,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Update="Configs\PageLocators\Category\CategoriesListPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Category\CreateCategoryPageLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
 	  <None Update="Configs\PageLocators\Meal\CreateMealPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
