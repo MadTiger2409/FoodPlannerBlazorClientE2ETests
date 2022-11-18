@@ -1,6 +1,5 @@
 ﻿using FoodPlannerE2E.Core.Configs;
 using FoodPlannerE2E.Core.Configs.PageLocators.Shared;
-using FoodPlannerE2E.Core.Configs.PageLocators.Unit;
 using FoodPlannerE2E.Core.Tools;
 using System;
 using System.Threading.Tasks;

@@ -1,0 +1,13 @@
+{
+  "NameTextInput": "//input[@locator='mealNameTextInput']",
+  "FormErrorMessages": "//ul[@locator='mealFormErrors']",
+  "IngredientProductTypeahead": "//input[@locator='mealIngredientProductSelector']",
+  "IngredientProductErrorMessage": "//div[@locator='mealIngredientProductItemError']",
+  "TypeaheadResults": "//div[@class='blazored-typeahead__results']",
+  "IngredientAmountNumberInput": "//input[@locator='mealIngredientAmountInput']",
+  "IngredientAmountErrorMessage": "//div[@locator='mealIngredientAmountError']",
+  "IngredientUnitTypeahead": "//input[@locator='mealIngredientUnitSelector']",
+  "IngredientUnitErrorMessage": "//div[@locator='mealIngredientUnitItemError']",
+  "AddIngredientButton": "//button[@locator='mealIngredientAddButton']",
+  "SendButton": "//button[@locator='mealSendButton']"
+}

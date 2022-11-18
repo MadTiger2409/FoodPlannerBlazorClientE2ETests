@@ -1,0 +1,5 @@
+{
+  "nameTextInput": "//input[@locator='categoriesNameText']",
+  "sendButton": "//button[@locator='categoriesSendButton']",
+  "formErrorMessages": "//ul[@locator='categoriesListFormErrors']"
+}

@@ -1,0 +1,5 @@
+{
+  "nameTextInput": "//input[@locator='mealsNameText']",
+  "sendButton": "//button[@locator='mealsSendButton']",
+  "formErrorMessages": "//ul[@locator='mealsListFormErrors']"
+}
