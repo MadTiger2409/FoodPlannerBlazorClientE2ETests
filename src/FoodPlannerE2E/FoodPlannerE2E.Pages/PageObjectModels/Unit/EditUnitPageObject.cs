@@ -3,15 +3,16 @@ using OpenQA.Selenium;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
 {
-    public class CreateUnitPageObject : BasePageObject
+    public class EditUnitPageObject : BasePageObject
     {
         protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(_locators.NameTextInput)); }
         protected IWebElement NameErrorMessage { get => _driver.FindElement(By.XPath(_locators.NameErrorMessage)); }
         protected IWebElement SendButton { get => _driver.FindElement(By.XPath(_locators.SendButton)); }
+        protected IWebElement EditButton { get => _driver.FindElement(By.XPath(_locators.EditButton)); }
 
-        private readonly CreateUnitPageLocators _locators;
+        private readonly EditUnitPageLocators _locators;
 
-        public CreateUnitPageObject(IWebDriver driver) : base(driver) => _locators = ConfigReader.GetJsonAsObject<CreateUnitPageLocators>();
+        public EditUnitPageObject(IWebDriver driver) : base(driver) => _locators = ConfigReader.GetJsonAsObject<EditUnitPageLocators>();
 
         public void InsertName(string name)
         {
@@ -20,6 +21,8 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
         }
 
         public void SendForm() => SendButton.Click();
-        public void NavigateTo() => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/units/new");
+        public void ChangeFormEditability() => EditButton.Click();
+        public void NavigateTo(uint id) => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/units/{id}");
+        public bool IsFormEditable() => _driver.FindElement(By.TagName("fieldset")).Enabled;
     }
 }
