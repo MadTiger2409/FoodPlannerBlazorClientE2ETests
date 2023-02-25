@@ -4,10 +4,11 @@ using OpenQA.Selenium;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels
 {
-    public class BasePageObject
+    public class BasePageObject<TPageLocators> where TPageLocators : class
     {
         protected string AppBaseHttpUrl { get; private set; }
         protected string AppBaseHttpsUrl { get; private set; }
+        protected TPageLocators Locators { get; private set; }
         protected JsonConfigReader ConfigReader { get; private set; }
 
         protected readonly IWebDriver _driver;
@@ -17,6 +18,7 @@ namespace FoodPlannerE2E.Pages.PageObjectModels
             _driver = driver;
             ConfigReader = new JsonConfigReader();
             var settings = ConfigReader.GetJsonAsObject<TestSolutionSettings>();
+            Locators = ConfigReader.GetJsonAsObject<TPageLocators>();
 
             AppBaseHttpUrl = settings.ApplicationBaseHttpUrl;
             AppBaseHttpsUrl = settings.ApplicationBaseHttpsUrl;

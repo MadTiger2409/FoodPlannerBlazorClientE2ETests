@@ -3,16 +3,14 @@ using OpenQA.Selenium;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
 {
-    public class EditUnitPageObject : BasePageObject
+    public class EditUnitPageObject : BasePageObject<EditUnitPageLocators>
     {
-        protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(_locators.NameTextInput)); }
-        protected IWebElement NameErrorMessage { get => _driver.FindElement(By.XPath(_locators.NameErrorMessage)); }
-        protected IWebElement SendButton { get => _driver.FindElement(By.XPath(_locators.SendButton)); }
-        protected IWebElement EditButton { get => _driver.FindElement(By.XPath(_locators.EditButton)); }
+        protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(Locators.NameTextInput)); }
+        protected IWebElement NameErrorMessage { get => _driver.FindElement(By.XPath(Locators.NameErrorMessage)); }
+        protected IWebElement SendButton { get => _driver.FindElement(By.XPath(Locators.SendButton)); }
+        protected IWebElement EditButton { get => _driver.FindElement(By.XPath(Locators.EditButton)); }
 
-        private readonly EditUnitPageLocators _locators;
-
-        public EditUnitPageObject(IWebDriver driver) : base(driver) => _locators = ConfigReader.GetJsonAsObject<EditUnitPageLocators>();
+        public EditUnitPageObject(IWebDriver driver) : base(driver) { }
 
         public void InsertName(string name)
         {

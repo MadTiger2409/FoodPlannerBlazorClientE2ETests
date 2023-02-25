@@ -6,26 +6,37 @@ using Xunit;
 
 namespace FoodPlannerE2E.Tests.Tests.Unit
 {
-    [Trait("Unit", "Create")]
-    public class CreateUnitPositiveTest : BaseTest
-    {
-        public CreateUnitPageObject CreateUnitPage { get; set; }
-        public ResponseStatusPageObject ResponseStatusPage { get; set; }
+	[Trait("Unit", "Create")]
+	public sealed class CreateUnitPositiveTest : BaseTest
+	{
+		private const string ExpectedTitleHeaderText = "Success";
+		private const string NewUnitName = "test";
+		private string _actualTitleHeaderText;
 
-        public CreateUnitPositiveTest(DriverFixture fixture) : base(fixture)
-        {
-            CreateUnitPage = new(Driver);
-            ResponseStatusPage = new(Driver);
-        }
+		private readonly CreateUnitPageObject _createUnitPage;
+		private readonly UnitsListPageObject _unitsListPageObject;
+		private readonly ResponseStatusPageObject _responseStatusPage;
 
-        [Fact]
-        public void Should_Create_Unit()
-        {
-            CreateUnitPage.NavigateTo();
-            CreateUnitPage.InsertName("test");
-            CreateUnitPage.SendForm();
+		public CreateUnitPositiveTest(DriverFixture fixture) : base(fixture)
+		{
+			_createUnitPage = new(Driver);
+			_unitsListPageObject = new(Driver);
+			_responseStatusPage = new(Driver);
+		}
 
-            ResponseStatusPage.TitleHeaderText.Should().Be("Success");
-        }
-    }
+		[Fact]
+		public void Should_Create_Unit()
+		{
+			_createUnitPage.NavigateTo();
+			_createUnitPage.InsertName(NewUnitName);
+			_createUnitPage.SendForm();
+
+			_actualTitleHeaderText = _responseStatusPage.TitleHeaderText;
+
+			_unitsListPageObject.NavigateTo();
+
+			_actualTitleHeaderText.Should().Be(ExpectedTitleHeaderText);
+			_unitsListPageObject.ContainsUnitWithGivenName(NewUnitName).Should().BeTrue();
+		}
+	}
 }
