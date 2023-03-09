@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using FoodPlannerE2E.Pages.ValidationErrorMessages;
 using FoodPlannerE2E.Tests.Fixtures.Unit;
 using Xunit;
 
@@ -7,6 +8,8 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 	[Trait("Unit", "Create")]
 	public class CreateUnitNegativeTests : IClassFixture<CreateUnitFixture>
 	{
+		private const string EmptyName = "";
+
 		private readonly CreateUnitFixture _createUnitFixture;
 
 		public CreateUnitNegativeTests(CreateUnitFixture createUnitFixture)
@@ -15,10 +18,12 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 		}
 
 		[Fact]
-		public void CreateUnitNegative()
+		public void Should_Not_Create_Unit_When_Name_Is_Empty()
 		{
-			var x = 1;
-			x.Should().Be(1);
+			_createUnitFixture.CreateUnitPage.InsertName(EmptyName);
+			_createUnitFixture.CreateUnitPage.SendForm();
+
+			_createUnitFixture.CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationErrorMessages.NameCantBeEmptyMessage).Should().BeTrue();
 		}
 	}
 }

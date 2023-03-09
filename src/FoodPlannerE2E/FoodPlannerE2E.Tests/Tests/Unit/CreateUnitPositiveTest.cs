@@ -24,7 +24,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 		}
 
 		[Fact]
-		public void Should_Create_Unit()
+		public void Should_Create_Unit_When_Name_Is_Correct()
 		{
 			_createUnitFixture.CreateUnitPage.InsertName(NewUnitName);
 			_createUnitFixture.CreateUnitPage.SendForm();
