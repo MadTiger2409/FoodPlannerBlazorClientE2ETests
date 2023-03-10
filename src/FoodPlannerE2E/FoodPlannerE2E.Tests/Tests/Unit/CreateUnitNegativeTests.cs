@@ -23,7 +23,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 			_createUnitFixture.CreateUnitPage.InsertName(EmptyName);
 			_createUnitFixture.CreateUnitPage.SendForm();
 
-			_createUnitFixture.CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationErrorMessages.NameCantBeEmptyMessage).Should().BeTrue();
+			_createUnitFixture.CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationMessages.Name.CanNotBeEmpty).Should().BeTrue();
 		}
 	}
 }
