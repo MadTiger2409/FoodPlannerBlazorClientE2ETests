@@ -1,35 +1,34 @@
 ﻿using FluentAssertions;
-using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
 using FoodPlannerE2E.Tests.Fixtures.Unit;
-using Xunit;
+using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Tests.Unit
 {
-	[Trait("Unit", "Create")]
-	public sealed class CreateUnitPositiveTest : IClassFixture<CreateUnitFixture>
+	[TestFixture]
+	[Category("Unit")]
+	public sealed class CreateUnitPositiveTest : CreateUnitFixture
 	{
 		private const string ExpectedTitleHeaderText = "Success";
 		private const string NewUnitName = "test";
 		private string _actualTitleHeaderText;
 
-		private readonly CreateUnitFixture _createUnitFixture;
-		private readonly UnitsListPageObject _unitsListPageObject;
+		private UnitsListPageObject _unitsListPageObject;
 
-		public CreateUnitPositiveTest(CreateUnitFixture fixture)
+		[OneTimeSetUp]
+		protected override void Setup()
 		{
-			_createUnitFixture = fixture;
-
-			_unitsListPageObject = new(_createUnitFixture.DriverFixture.Driver);
+			base.Setup();
+			_unitsListPageObject = new(Driver);
 		}
 
-		[Fact]
+		[Test]
 		public void Should_Create_Unit_When_Name_Is_Correct()
 		{
-			_createUnitFixture.CreateUnitPage.InsertName(NewUnitName);
-			_createUnitFixture.CreateUnitPage.SendForm();
+			CreateUnitPage.InsertName(NewUnitName);
+			CreateUnitPage.SendForm();
 
-			_actualTitleHeaderText = _createUnitFixture.ResponseStatusPage.TitleHeaderText;
+			_actualTitleHeaderText = ResponseStatusPage.TitleHeaderText;
 
 			_unitsListPageObject.NavigateTo();
 

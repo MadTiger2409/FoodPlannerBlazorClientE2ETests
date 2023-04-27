@@ -1,28 +1,23 @@
 ﻿using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
-using System;
+using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {
-	public class CreateUnitFixture : IDisposable
+	[SetUpFixture]
+	public class CreateUnitFixture : DriverFixture
 	{
-		public DriverFixture DriverFixture { get; }
-		public CreateUnitPageObject CreateUnitPage { get; }
-		public ResponseStatusPageObject ResponseStatusPage { get; }
+		protected CreateUnitPageObject CreateUnitPage { get; private set; }
+		protected ResponseStatusPageObject ResponseStatusPage { get; private set; }
 
-		public CreateUnitFixture()
+		[OneTimeSetUp]
+		protected override void Setup()
 		{
-			DriverFixture = new();
-
-			CreateUnitPage = new(DriverFixture.Driver);
-			ResponseStatusPage = new(DriverFixture.Driver);
+			base.Setup();
+			CreateUnitPage = new(Driver);
+			ResponseStatusPage = new(Driver);
 
 			CreateUnitPage.NavigateTo();
-		}
-
-		public void Dispose()
-		{
-			DriverFixture.Dispose();
 		}
 	}
 }
