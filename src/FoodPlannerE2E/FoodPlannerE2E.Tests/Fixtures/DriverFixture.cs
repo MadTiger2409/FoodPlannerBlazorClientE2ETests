@@ -5,7 +5,6 @@ using System;
 
 namespace FoodPlannerE2E.Tests.Fixtures
 {
-	[SetUpFixture]
 	public class DriverFixture
 	{
 		public IWebDriver Driver { get; private set; }

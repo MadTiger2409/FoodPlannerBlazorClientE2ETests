@@ -4,7 +4,6 @@ using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {
-	[SetUpFixture]
 	public class CreateUnitFixture : DriverFixture
 	{
 		protected CreateUnitPageObject CreateUnitPage { get; private set; }
