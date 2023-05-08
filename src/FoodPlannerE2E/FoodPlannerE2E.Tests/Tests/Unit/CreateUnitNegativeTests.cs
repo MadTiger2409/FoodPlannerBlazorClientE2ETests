@@ -1,5 +1,5 @@
 ﻿using FluentAssertions;
-using FoodPlannerE2E.Pages.ValidationErrorMessages;
+using FoodPlannerE2E.Pages.ValidationErrorMessages.Shared;
 using FoodPlannerE2E.Tests.Fixtures.Unit;
 using NUnit.Framework;
 
@@ -19,7 +19,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 			CreateUnitPage.InsertName(EmptyName);
 			CreateUnitPage.SendForm();
 
-			CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationMessages.Name.CanNotBeEmpty).Should().BeTrue();
+			CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageValidationMessages.Name.CanNotBeEmpty).Should().BeTrue();
 		}
 
 		[Test]
@@ -28,7 +28,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 			CreateUnitPage.InsertName(TooShortName);
 			CreateUnitPage.SendForm();
 
-			CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationMessages.Name.MustBeOfMinimumLength).Should().BeTrue();
+			CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageValidationMessages.Name.MustBeOfMinimumLength).Should().BeTrue();
 		}
 
 		[Test]
@@ -37,7 +37,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 			CreateUnitPage.InsertName(TooLongName);
 			CreateUnitPage.SendForm();
 
-			CreateUnitPage.HasErrorMessageWithGivenText(CreateUnitPageValidationMessages.Name.CanBeOfMaximumLength).Should().BeTrue();
+			CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageValidationMessages.Name.CanBeOfMaximumLength).Should().BeTrue();
 		}
 	}
 }

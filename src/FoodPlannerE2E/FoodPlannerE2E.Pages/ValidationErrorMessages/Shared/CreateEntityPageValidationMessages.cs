@@ -1,6 +1,6 @@
-﻿namespace FoodPlannerE2E.Pages.ValidationErrorMessages
+﻿namespace FoodPlannerE2E.Pages.ValidationErrorMessages.Shared
 {
-	public static class CreateUnitPageValidationMessages
+	public static class CreateEntityPageValidationMessages
 	{
 		public static class Name
 		{
