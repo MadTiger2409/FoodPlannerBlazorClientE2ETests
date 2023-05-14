@@ -28,7 +28,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 			CreateUnitPage.InsertName(NewUnitName);
 			CreateUnitPage.SendForm();
 
-			_actualTitleHeaderText = ResponseStatusPage.TitleHeaderText;
+			_actualTitleHeaderText = ResponseStatusCard.TitleText;
 
 			_unitsListPageObject.NavigateTo();
 

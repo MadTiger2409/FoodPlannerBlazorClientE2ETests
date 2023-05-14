@@ -37,7 +37,10 @@
 	  <None Update="Configs\PageLocators\Product\ProductsListPageLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
-	  <None Update="Configs\PageLocators\Shared\ResponseStatusPageLocators.json">
+	  <None Update="Configs\PageLocators\Shared\DeleteEntityModalLocators.json">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="Configs\PageLocators\Shared\ResponseStatusCardLocators.json">
 	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </None>
 	  <None Update="Configs\PageLocators\ShoppingList\ShoppingListPageLocators.json">

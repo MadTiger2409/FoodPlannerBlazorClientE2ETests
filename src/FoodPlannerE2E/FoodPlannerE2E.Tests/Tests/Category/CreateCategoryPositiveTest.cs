@@ -28,7 +28,7 @@ namespace FoodPlannerE2E.Tests.Tests.Category
 			CreateCategoryPage.InsertName(NewCategoryName);
 			CreateCategoryPage.SendForm();
 
-			_actualTitleHeaderText = ResponseStatusPage.TitleHeaderText;
+			_actualTitleHeaderText = ResponseStatusCard.TitleText;
 
 			_categoriesListPageObject.NavigateTo();
 

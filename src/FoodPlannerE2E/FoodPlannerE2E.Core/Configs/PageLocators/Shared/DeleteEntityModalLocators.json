@@ -1,0 +1,7 @@
+{
+  "body": "//div[@locator='deleteEntityModal']",
+  "title": "//h5[@locator='deleteEntityModalTitle']",
+  "message": "//p[@locator='deleteEntityModalMessage']",
+  "noButton": "//button[@locator='deleteEntityModalNoButton']",
+  "yesButton": "//button[@locator='deleteEntityModalYesButton']"
+}

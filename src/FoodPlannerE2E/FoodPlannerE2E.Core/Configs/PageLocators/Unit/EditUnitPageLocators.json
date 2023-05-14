@@ -2,5 +2,6 @@
   "nameTextInput": "//input[@locator='unitNameText']",
   "nameErrorMessage": "//div[@locator='unitNameError']",
   "sendButton": "//button[@locator='unitSendButton']",
-  "editButton": "//button[@locator='unitEditButton']"
+  "editButton": "//button[@locator='unitEditButton']",
+  "deleteButton": "//button[@locator='unitDeleteButton']"
 }

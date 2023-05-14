@@ -4,19 +4,19 @@ using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {
-	public class CreateUnitFixture : DriverFixture
-	{
-		protected CreateUnitPageObject CreateUnitPage { get; private set; }
-		protected ResponseStatusPageObject ResponseStatusPage { get; private set; }
+    public class CreateUnitFixture : DriverFixture
+    {
+        protected CreateUnitPageObject CreateUnitPage { get; private set; }
+        protected ResponseStatusCardPageObject ResponseStatusCard { get; private set; }
 
-		[OneTimeSetUp]
-		protected override void Setup()
-		{
-			base.Setup();
-			CreateUnitPage = new(Driver);
-			ResponseStatusPage = new(Driver);
+        [OneTimeSetUp]
+        protected override void Setup()
+        {
+            base.Setup();
+            CreateUnitPage = new(Driver);
+            ResponseStatusCard = new(Driver);
 
-			CreateUnitPage.NavigateTo();
-		}
-	}
+            CreateUnitPage.NavigateTo();
+        }
+    }
 }
