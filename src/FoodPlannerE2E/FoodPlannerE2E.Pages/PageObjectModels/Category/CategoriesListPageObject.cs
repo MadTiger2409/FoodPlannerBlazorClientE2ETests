@@ -1,11 +1,9 @@
 ﻿using FoodPlannerE2E.Core.Configs.PageLocators.Category;
 using OpenQA.Selenium;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Category
 {
-	public class CategoriesListPageObject : BasePageObject<CategoriesListPageLocators>
+    public class CategoriesListPageObject : BasePageObject<CategoriesListPageLocators>
 	{
 		private IList<IWebElement> Categories { get => _driver.FindElements(By.XPath(Locators.Categories)); }
 

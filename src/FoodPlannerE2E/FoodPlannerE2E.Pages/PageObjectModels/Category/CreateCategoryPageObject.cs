@@ -1,11 +1,9 @@
 ﻿using FoodPlannerE2E.Core.Configs.PageLocators.Category;
 using OpenQA.Selenium;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Category
 {
-	public class CreateCategoryPageObject : BasePageObject<CreateCategoryPageLocators>
+    public class CreateCategoryPageObject : BasePageObject<CreateCategoryPageLocators>
 	{
 		protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(Locators.NameTextInput)); }
 		protected IList<IWebElement> NameErrorMessages { get => _driver.FindElements(By.XPath(Locators.NameErrorMessage)); }

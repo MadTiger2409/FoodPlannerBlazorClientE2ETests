@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPlannerE2E.Pages", "Foo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FoodPlannerE2E.Tests", "FoodPlannerE2E.Tests\FoodPlannerE2E.Tests.csproj", "{178BE750-1877-4DDE-B09C-5C86D6EF9254}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodPlannerE2E.ApiManager", "FoodPlannerE2E.ApiManager\FoodPlannerE2E.ApiManager.csproj", "{97ADBE78-E3C1-4117-950C-34D6960E8D3B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{178BE750-1877-4DDE-B09C-5C86D6EF9254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{178BE750-1877-4DDE-B09C-5C86D6EF9254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{178BE750-1877-4DDE-B09C-5C86D6EF9254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97ADBE78-E3C1-4117-950C-34D6960E8D3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97ADBE78-E3C1-4117-950C-34D6960E8D3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97ADBE78-E3C1-4117-950C-34D6960E8D3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97ADBE78-E3C1-4117-950C-34D6960E8D3B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

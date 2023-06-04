@@ -1,11 +1,10 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-using System;
 
 namespace FoodPlannerE2E.Tests.Fixtures
 {
-	public class DriverFixture
+    public class DriverFixture
 	{
 		public IWebDriver Driver { get; private set; }
 

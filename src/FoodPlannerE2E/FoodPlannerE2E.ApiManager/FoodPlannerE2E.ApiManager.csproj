@@ -7,15 +7,12 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<Compile Update="Configs\TestSolutionSettings.cs">
-			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
-		</Compile>
+		<ProjectReference Include="..\FoodPlannerE2E.Core\FoodPlannerE2E.Core.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>
-		<None Update="Configs\**\*.json">
-			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-		</None>
+		<Folder Include="Models\" />
+		<Folder Include="Services\" />
 	</ItemGroup>
 
 </Project>

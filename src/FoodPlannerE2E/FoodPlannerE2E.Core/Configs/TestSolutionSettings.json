@@ -1,4 +1,6 @@
 {
   "applicationBaseHttpUrl": "http://localhost:5020",
-  "applicationBaseHttpsUrl": "https://localhost:5021"
+  "applicationBaseHttpsUrl": "https://localhost:5021",
+  "webApiBaseHttpUrl": "http://localhost:5000",
+  "webApiBaseHttpsUrl": "https://localhost:5001"
 }

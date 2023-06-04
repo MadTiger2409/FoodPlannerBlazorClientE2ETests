@@ -2,7 +2,7 @@
 
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<ImplicitUsings>disable</ImplicitUsings>
+		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>disable</Nullable>
 
 		<IsPackable>false</IsPackable>
@@ -21,6 +21,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\FoodPlannerE2E.ApiManager\FoodPlannerE2E.ApiManager.csproj" />
 		<ProjectReference Include="..\FoodPlannerE2E.Pages\FoodPlannerE2E.Pages.csproj" />
 	</ItemGroup>
 
