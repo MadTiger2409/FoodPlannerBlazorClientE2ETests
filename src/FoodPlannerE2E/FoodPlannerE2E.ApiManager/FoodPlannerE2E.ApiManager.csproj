@@ -10,9 +10,4 @@
 		<ProjectReference Include="..\FoodPlannerE2E.Core\FoodPlannerE2E.Core.csproj" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<Folder Include="Models\" />
-		<Folder Include="Services\" />
-	</ItemGroup>
-
 </Project>
