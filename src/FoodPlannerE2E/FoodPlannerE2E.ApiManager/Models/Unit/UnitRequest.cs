@@ -2,5 +2,6 @@
 {
     public class UnitRequest
     {
+        public string Name { get; set; }
     }
 }
