@@ -16,9 +16,9 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         private UnitsListPageObject _unitsListPageObject;
 
         [OneTimeSetUp]
-        protected override void Setup()
+        protected override async Task Setup()
         {
-            base.Setup();
+            await base.Setup();
             _unitsListPageObject = new(Driver);
         }
 

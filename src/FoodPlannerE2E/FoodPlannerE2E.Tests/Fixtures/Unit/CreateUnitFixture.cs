@@ -1,18 +1,19 @@
 ﻿using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
+using FoodPlannerE2E.Tests.Fixtures.Common;
 using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {
-    public class CreateUnitFixture : DriverFixture
+    public class CreateUnitFixture : BaseTestFixture
     {
         protected CreateUnitPageObject CreateUnitPage { get; private set; }
         protected ResponseStatusCardPageObject ResponseStatusCard { get; private set; }
 
         [OneTimeSetUp]
-        protected override void Setup()
+        protected override async Task Setup()
         {
-            base.Setup();
+            await base.Setup();
             CreateUnitPage = new(Driver);
             ResponseStatusCard = new(Driver);
 

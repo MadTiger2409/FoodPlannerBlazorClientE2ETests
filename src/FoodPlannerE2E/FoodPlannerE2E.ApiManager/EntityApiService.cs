@@ -1,9 +1,8 @@
 ﻿using FoodPlannerE2E.ApiManager.Models.Common;
-using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using System.Text.Json;
 
-namespace FoodPlannerE2E.ApiManager.Services
+namespace FoodPlannerE2E.ApiManager
 {
     public class EntityApiService
     {
@@ -14,7 +13,7 @@ namespace FoodPlannerE2E.ApiManager.Services
 
         public async Task<TResponse> CreateAsync<TRequest, TResponse>(TRequest entity)
         {
-            HttpContent httpContent = new StringContent(JsonSerializer.Serialize(entity));
+            HttpContent httpContent = new StringContent(JsonConvert.SerializeObject(entity));
             httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = await _client.PostAsync("", httpContent);
@@ -23,7 +22,7 @@ namespace FoodPlannerE2E.ApiManager.Services
             if (string.IsNullOrWhiteSpace(contentAsString))
                 throw new ArgumentException($"Got empty response while creating entity of type {typeof(TRequest).Name}");
 
-            var responseObject = JsonSerializer.Deserialize<ApiResponse<TResponse>>(contentAsString);
+            var responseObject = JsonConvert.DeserializeObject<ApiResponse<TResponse>>(contentAsString);
 
             if (!responseObject.Success)
             {
