@@ -16,9 +16,8 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         private CategoriesListPageObject _categoriesListPageObject;
 
         [OneTimeSetUp]
-        protected override async Task Setup()
+        protected void TestSetup()
         {
-            await base.Setup();
             _categoriesListPageObject = new(Driver);
         }
 

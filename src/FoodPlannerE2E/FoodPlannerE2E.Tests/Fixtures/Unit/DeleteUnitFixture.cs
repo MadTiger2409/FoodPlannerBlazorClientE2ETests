@@ -17,10 +17,8 @@ namespace FoodPlannerE2E.Tests.Fixtures.Unit
         protected DeleteEntityModalPageObject DeleteEntityModal { get; private set; }
 
         [OneTimeSetUp]
-        protected override async Task Setup()
+        protected void Setup()
         {
-            await base.Setup();
-
             EditUnitPage = new(Driver);
             UnitsListPage = new(Driver);
             DeleteEntityModal = new(Driver);

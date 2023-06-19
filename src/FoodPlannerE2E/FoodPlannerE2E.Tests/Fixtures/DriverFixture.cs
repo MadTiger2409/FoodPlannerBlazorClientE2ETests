@@ -9,7 +9,7 @@ namespace FoodPlannerE2E.Tests.Fixtures
         public IWebDriver Driver { get; private set; }
 
         [OneTimeSetUp]
-        protected virtual async Task Setup()
+        protected void DriverSetup()
         {
             Driver = new ChromeDriver();
             Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(30);

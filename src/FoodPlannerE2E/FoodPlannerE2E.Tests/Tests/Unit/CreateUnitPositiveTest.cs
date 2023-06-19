@@ -7,7 +7,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
 {
     [TestFixture]
     [Category("Unit")]
-    public sealed class CreateUnitPositiveTest : CreateUnitFixture
+    public class CreateUnitPositiveTest : CreateUnitFixture
     {
         private const string ExpectedTitleHeaderText = "Success";
         private const string NewUnitName = "test";
@@ -16,9 +16,8 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         private UnitsListPageObject _unitsListPageObject;
 
         [OneTimeSetUp]
-        protected override async Task Setup()
+        protected void TestSetup()
         {
-            await base.Setup();
             _unitsListPageObject = new(Driver);
         }
 

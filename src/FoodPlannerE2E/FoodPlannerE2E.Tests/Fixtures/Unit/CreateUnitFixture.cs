@@ -11,9 +11,8 @@ namespace FoodPlannerE2E.Tests.Fixtures.Unit
         protected ResponseStatusCardPageObject ResponseStatusCard { get; private set; }
 
         [OneTimeSetUp]
-        protected override async Task Setup()
+        protected void Setup()
         {
-            await base.Setup();
             CreateUnitPage = new(Driver);
             ResponseStatusCard = new(Driver);
 

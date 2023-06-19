@@ -5,9 +5,8 @@ namespace FoodPlannerE2E.Tests.Fixtures.Common
     public class BaseTestFixture : DriverFixture
     {
         [OneTimeSetUp]
-        protected override async Task Setup()
+        protected virtual async Task BaseTestSetup()
         {
-            await base.Setup();
             await PrepareTestData();
         }
 
