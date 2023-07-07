@@ -4,6 +4,7 @@ using FoodPlannerE2E.ApiManager.Models.Unit;
 using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
 using FoodPlannerE2E.Tests.Fixtures.Common;
+using FoodPlannerE2E.Tools;
 using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
@@ -29,7 +30,9 @@ namespace FoodPlannerE2E.Tests.Fixtures.Unit
         protected override async Task PrepareTestData()
         {
             EntityApiService = new EntityApiService(HttpClientFactory.GetHttpClient(EntityType.Unit));
-            UnitToDelete = await EntityApiService.CreateAsync<UnitRequest, UnitResponse>(new UnitRequest { Name = "test1234" });
+            var unitName = ValueGenerator.GenerateString(10);
+
+            UnitToDelete = await EntityApiService.CreateAsync<UnitRequest, UnitResponse>(new UnitRequest { Name = unitName });
         }
     }
 }
