@@ -7,9 +7,12 @@ namespace FoodPlannerE2E.Tests.Fixtures.Common
         [OneTimeSetUp]
         protected virtual async Task BaseTestSetup()
         {
-            await PrepareTestData();
+            await PrepareTestDataAsync();
+            PrepareTestData();
         }
 
-        protected virtual async Task PrepareTestData() { }
+        protected virtual async Task PrepareTestDataAsync() { }
+
+        protected virtual void PrepareTestData() { }
     }
 }

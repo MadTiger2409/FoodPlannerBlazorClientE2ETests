@@ -27,7 +27,7 @@ namespace FoodPlannerE2E.Tests.Fixtures.Unit
             UnitsListPage.NavigateTo();
         }
 
-        protected override async Task PrepareTestData()
+        protected override async Task PrepareTestDataAsync()
         {
             EntityApiService = new EntityApiService(HttpClientFactory.GetHttpClient(EntityType.Unit));
             var unitName = ValueGenerator.GenerateString(10);
