@@ -1,5 +1,4 @@
 ﻿using FoodPlannerE2E.Core.Configs.PageLocators.Category;
-using OpenQA.Selenium;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Category
 {

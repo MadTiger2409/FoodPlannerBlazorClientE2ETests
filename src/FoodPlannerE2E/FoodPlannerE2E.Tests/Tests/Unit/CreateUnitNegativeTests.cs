@@ -1,7 +1,5 @@
-﻿using FluentAssertions;
-using FoodPlannerE2E.Pages.TextsAndMessages;
+﻿using FoodPlannerE2E.Pages.TextsAndMessages;
 using FoodPlannerE2E.Tests.Fixtures.Unit;
-using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Tests.Unit
 {
@@ -9,14 +7,14 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
     [Category("Unit")]
     public class CreateUnitNegativeTests : CreateUnitFixture
     {
-        private const string EmptyName = "";
-        private const string TooShortName = "X";
-        private const string TooLongName = "a85150f56db84d5bab8f4b9d3a908b866b0d73b9440a492cbee5680afabad323372f8172bd44437fb20751f8855c3bc5b0814";
+        private string _emptyName;
+        private string _tooShortName;
+        private string _tooLongName;
 
         [Test]
         public void Should_Not_Create_Unit_When_Name_Is_Empty()
         {
-            CreateUnitPage.InsertName(EmptyName);
+            CreateUnitPage.InsertName(_emptyName);
             CreateUnitPage.SendForm();
 
             CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.CanNotBeEmpty).Should().BeTrue();
@@ -25,7 +23,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         [Test]
         public void Should_Not_Create_Unit_When_Name_Is_Too_Short()
         {
-            CreateUnitPage.InsertName(TooShortName);
+            CreateUnitPage.InsertName(_tooShortName);
             CreateUnitPage.SendForm();
 
             CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.MustBeOfMinimumLength).Should().BeTrue();
@@ -34,10 +32,19 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         [Test]
         public void Should_Not_Create_Unit_When_Name_Is_Too_Long()
         {
-            CreateUnitPage.InsertName(TooLongName);
+            CreateUnitPage.InsertName(_tooLongName);
             CreateUnitPage.SendForm();
 
             CreateUnitPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.CanBeOfMaximumLength).Should().BeTrue();
+        }
+
+        protected override void PrepareTestData()
+        {
+            base.PrepareTestData();
+
+            _emptyName = string.Empty;
+            _tooShortName = ValueGenerator.GenerateString(1);
+            _tooLongName = ValueGenerator.GenerateString(102);
         }
     }
 }

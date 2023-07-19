@@ -1,6 +1,4 @@
-﻿using NUnit.Framework;
-
-namespace FoodPlannerE2E.Tests.Fixtures.Common
+﻿namespace FoodPlannerE2E.Tests.Fixtures.Common
 {
     public class BaseTestFixture : DriverFixture
     {

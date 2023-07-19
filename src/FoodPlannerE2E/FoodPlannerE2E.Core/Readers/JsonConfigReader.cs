@@ -1,6 +1,6 @@
 ﻿using System.Text.Json;
 
-namespace FoodPlannerE2E.Core.Tools
+namespace FoodPlannerE2E.Core.Readers
 {
     public class JsonConfigReader
     {

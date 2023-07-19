@@ -1,7 +1,5 @@
-﻿using FluentAssertions;
-using FoodPlannerE2E.Pages.TextsAndMessages;
+﻿using FoodPlannerE2E.Pages.TextsAndMessages;
 using FoodPlannerE2E.Tests.Fixtures.Category;
-using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Tests.Category
 {
@@ -9,14 +7,14 @@ namespace FoodPlannerE2E.Tests.Tests.Category
     [Category("Category")]
     public class CreateCategoryNegativeTests : CreateCategoryFixture
     {
-        private const string EmptyName = "";
-        private const string TooShortName = "X";
-        private const string TooLongName = "a85150f56db84d5bab8f4b9d3a908b866b0d73b9440a492cbee5680afabad323372f8172bd44437fb20751f8855c3bc5b0814";
+        private string _emptyName;
+        private string _tooShortName;
+        private string _tooLongName;
 
         [Test]
         public void Should_Not_Create_Category_When_Name_Is_Empty()
         {
-            CreateCategoryPage.InsertName(EmptyName);
+            CreateCategoryPage.InsertName(_emptyName);
             CreateCategoryPage.SendForm();
 
             CreateCategoryPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.CanNotBeEmpty).Should().BeTrue();
@@ -25,7 +23,7 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         [Test]
         public void Should_Not_Create_Category_When_Name_Is_Too_Short()
         {
-            CreateCategoryPage.InsertName(TooShortName);
+            CreateCategoryPage.InsertName(_tooShortName);
             CreateCategoryPage.SendForm();
 
             CreateCategoryPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.MustBeOfMinimumLength).Should().BeTrue();
@@ -34,10 +32,18 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         [Test]
         public void Should_Not_Create_Category_When_Name_Is_Too_Long()
         {
-            CreateCategoryPage.InsertName(TooLongName);
+            CreateCategoryPage.InsertName(_tooLongName);
             CreateCategoryPage.SendForm();
 
             CreateCategoryPage.HasErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.CanBeOfMaximumLength).Should().BeTrue();
+        }
+
+        protected override void PrepareTestData()
+        {
+            base.PrepareTestData();
+            _emptyName = string.Empty;
+            _tooShortName = ValueGenerator.GenerateString(1);
+            _tooLongName = ValueGenerator.GenerateString(102);
         }
     }
 }

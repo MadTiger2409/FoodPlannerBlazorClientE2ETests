@@ -1,6 +1,5 @@
 ﻿using FoodPlannerE2E.Core.Configs;
-using FoodPlannerE2E.Core.Tools;
-using OpenQA.Selenium;
+using FoodPlannerE2E.Core.Readers;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels
 {

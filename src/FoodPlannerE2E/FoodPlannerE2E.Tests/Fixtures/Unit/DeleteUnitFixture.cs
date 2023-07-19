@@ -4,8 +4,6 @@ using FoodPlannerE2E.ApiManager.Models.Unit;
 using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
 using FoodPlannerE2E.Tests.Fixtures.Common;
-using FoodPlannerE2E.Tools;
-using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {

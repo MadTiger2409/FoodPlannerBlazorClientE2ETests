@@ -1,7 +1,6 @@
 ﻿using FoodPlannerE2E.Pages.PageObjectModels.Category;
 using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Tests.Fixtures.Common;
-using NUnit.Framework;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Category
 {

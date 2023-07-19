@@ -1,6 +1,4 @@
-﻿using FluentAssertions;
-using FoodPlannerE2E.Tests.Fixtures.Unit;
-using NUnit.Framework;
+﻿using FoodPlannerE2E.Tests.Fixtures.Unit;
 
 namespace FoodPlannerE2E.Tests.Tests.Unit
 {

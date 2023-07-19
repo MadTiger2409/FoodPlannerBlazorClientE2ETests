@@ -1,5 +1,4 @@
-﻿using NUnit.Framework;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace FoodPlannerE2E.Tests.Fixtures

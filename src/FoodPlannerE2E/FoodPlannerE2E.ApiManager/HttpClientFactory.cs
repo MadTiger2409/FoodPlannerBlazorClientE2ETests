@@ -1,12 +1,12 @@
 ﻿using FoodPlannerE2E.ApiManager.Enums;
 using FoodPlannerE2E.Core.Configs;
-using FoodPlannerE2E.Core.Tools;
+using FoodPlannerE2E.Core.Readers;
 
 namespace FoodPlannerE2E.ApiManager
 {
     public static class HttpClientFactory
     {
-        private static readonly JsonConfigReader _configReader = new JsonConfigReader();
+        private static readonly JsonConfigReader _configReader = new();
         private static TestSolutionSettings _settings = _configReader.GetJsonAsObject<TestSolutionSettings>();
 
         public static HttpClient GetHttpClient(EntityType type)
