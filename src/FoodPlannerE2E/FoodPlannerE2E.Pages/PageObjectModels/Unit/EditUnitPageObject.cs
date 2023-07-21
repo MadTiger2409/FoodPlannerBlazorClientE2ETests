@@ -4,11 +4,11 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
 {
     public class EditUnitPageObject : BasePageObject<EditUnitPageLocators>
     {
-        protected IWebElement NameTextBox { get => _driver.FindElement(By.XPath(Locators.NameTextInput)); }
-        protected IWebElement NameErrorMessage { get => _driver.FindElement(By.XPath(Locators.NameErrorMessage)); }
-        protected IWebElement SendButton { get => _driver.FindElement(By.XPath(Locators.SendButton)); }
-        protected IWebElement EditButton { get => _driver.FindElement(By.XPath(Locators.EditButton)); }
-        protected IWebElement DeleteButton { get => _driver.FindElement(By.XPath(Locators.DeleteButton)); }
+        protected IWebElement NameTextBox => _driver.FindElement(By.XPath(Locators.NameTextInput));
+        protected IWebElement NameErrorMessage => _driver.FindElement(By.XPath(Locators.NameErrorMessage));
+        protected IWebElement SendButton => _driver.FindElement(By.XPath(Locators.SendButton));
+        protected IWebElement EditButton => _driver.FindElement(By.XPath(Locators.EditButton));
+        protected IWebElement DeleteButton => _driver.FindElement(By.XPath(Locators.DeleteButton));
 
         public EditUnitPageObject(IWebDriver driver) : base(driver) { }
 

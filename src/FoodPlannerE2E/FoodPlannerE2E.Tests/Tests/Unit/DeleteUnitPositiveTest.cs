@@ -9,7 +9,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         [Test]
         public void Should_Delete_Unit_When_Entity_Exists()
         {
-            UnitsListPage.NavigateToUnitEditPage(UnitToDelete.Name);
+            UnitsListPage.NavigateToEditPage(UnitToDelete.Name);
 
             EditUnitPage.TriggerDeleteModal();
             DeleteEntityModal.ConfirmDeletion();
