@@ -25,8 +25,6 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Category
 
         public void NavigateTo() => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/categories");
         public void SendForm() => SendButton.Click();
-
-        //TODO Change it because categories list doesn't have <a> inside <li>
-        public bool ContainsUnitWithGivenName(string name) => Categories.Any(x => x.Text.Trim() == name);
+        public bool ContainsUnitWithGivenName(string name) => Categories.Any(x => x.Text.Trim() == name.ToLowerInvariant());
     }
 }

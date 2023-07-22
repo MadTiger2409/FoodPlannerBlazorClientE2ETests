@@ -16,6 +16,6 @@ namespace FoodPlannerE2E.Tests.Fixtures
         }
 
         [OneTimeTearDown]
-        protected virtual void Finalize() => Driver.Close();
+        protected void DriverTearDown() => Driver.Close();
     }
 }

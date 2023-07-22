@@ -9,7 +9,7 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
         public UnitsListPageObject(IWebDriver driver) : base(driver) { }
 
         public void NavigateTo() => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/units");
-        public bool ContainsUnitWithGivenName(string name) => Units.Any(x => x.FindElement(By.TagName("a")).Text.Trim() == name);
-        public void NavigateToEditPage(string name) => Units.SingleOrDefault(x => x.FindElement(By.TagName("a")).Text.Trim() == name).Click();
+        public bool ContainsUnitWithGivenName(string name) => Units.Any(x => x.FindElement(By.TagName("a")).Text.Trim() == name.ToLowerInvariant());
+        public void NavigateToEditPage(string name) => Units.SingleOrDefault(x => x.FindElement(By.TagName("a")).Text.Trim() == name.ToLowerInvariant()).Click();
     }
 }
