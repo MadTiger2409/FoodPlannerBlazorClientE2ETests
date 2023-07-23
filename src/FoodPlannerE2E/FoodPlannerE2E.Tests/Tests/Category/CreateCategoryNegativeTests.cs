@@ -1,5 +1,4 @@
-﻿using FoodPlannerE2E.Pages.TextsAndMessages;
-using FoodPlannerE2E.Tests.Fixtures.Category;
+﻿using FoodPlannerE2E.Tests.Fixtures.Category;
 
 namespace FoodPlannerE2E.Tests.Tests.Category
 {
