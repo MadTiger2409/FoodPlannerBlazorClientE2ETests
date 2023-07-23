@@ -17,7 +17,7 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         {
             CategoriesListPageObject.SearchForCategory(CategoryToSearchFor.Name);
 
-            CategoriesListPageObject.ContainsUnitWithGivenName(CategoryToSearchFor.Name.ToLowerInvariant()).Should().BeTrue();
+            CategoriesListPageObject.ContainsUnitWithGivenName(CategoryToSearchFor.Name).Should().BeTrue();
         }
 
         protected override async Task PrepareTestDataAsync()

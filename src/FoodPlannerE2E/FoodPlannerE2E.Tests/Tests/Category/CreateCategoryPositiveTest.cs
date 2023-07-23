@@ -24,7 +24,7 @@ namespace FoodPlannerE2E.Tests.Tests.Category
             _categoriesListPageObject.NavigateTo();
 
             _actualTitleHeaderText.Should().Be(ResponseStatusCardPageMessages.Ui.Title.Success);
-            _categoriesListPageObject.ContainsUnitWithGivenName(_newCategoryName.ToLowerInvariant()).Should().BeTrue();
+            _categoriesListPageObject.ContainsUnitWithGivenName(_newCategoryName).Should().BeTrue();
         }
 
         [OneTimeSetUp]

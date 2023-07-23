@@ -31,7 +31,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         }
 
         [OneTimeSetUp]
-        public void Init()
+        public void TestSetup()
         {
             _unitsListPageObject = new(Driver);
             _editUnitPageObject = new(Driver);
@@ -39,7 +39,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         }
 
         [OneTimeTearDown]
-        public void Cleanup()
+        public void TestCleanup()
         {
             _unitsListPageObject.NavigateToEditPage(_newUnitName);
 

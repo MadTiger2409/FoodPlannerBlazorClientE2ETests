@@ -3,7 +3,7 @@
     public class BaseTestFixture : DriverFixture
     {
         [OneTimeSetUp]
-        protected async Task BaseTestSetUp()
+        protected async Task BaseTestSetup()
         {
             await PrepareTestDataAsync();
             PrepareTestData();
