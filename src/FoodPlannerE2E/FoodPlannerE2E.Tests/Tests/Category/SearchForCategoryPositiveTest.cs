@@ -1,5 +1,4 @@
 ﻿using FoodPlannerE2E.ApiManager.Enums;
-using FoodPlannerE2E.ApiManager;
 using FoodPlannerE2E.Tests.Fixtures.Category;
 using FoodPlannerE2E.ApiManager.Models.Category;
 

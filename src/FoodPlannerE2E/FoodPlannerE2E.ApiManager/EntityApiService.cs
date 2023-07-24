@@ -37,7 +37,7 @@ namespace FoodPlannerE2E.ApiManager
             return responseObject.Value;
         }
 
-        public async Task<bool> DeleteAsync(int id)
+        public async Task<bool> DeleteAsync(uint id)
         {
             var result = await _client.DeleteAsync(id.ToString());
 

@@ -2,6 +2,6 @@
 {
     public class BaseResponse
     {
-        public int Id { get; set; }
+        public uint Id { get; set; }
     }
 }

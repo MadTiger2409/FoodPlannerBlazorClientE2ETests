@@ -1,5 +1,7 @@
 {
   "body": "//div[@locator='responseStatusCard']",
   "title": "//h5[@locator='responseStatusTitle']",
-  "closeButton": "//button[@locator='responseStatusCloseButton']"
+  "closeButton": "//button[@locator='responseStatusCloseButton']",
+  "successMessage": "//p[@locator='responseStatusSuccessMessage']",
+  "errorMessages": "//ul[@locator='responseStatusErrorMessages//li']"
 }
