@@ -9,9 +9,11 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Shared
         protected IWebElement Title => _driver.FindElement(By.XPath(Locators.Title));
         protected IWebElement CloseButton => _driver.FindElement(By.XPath(Locators.CloseButton));
         protected IWebElement SuccessMessage => _driver.FindElement(By.XPath(Locators.SuccessMessage));
+        protected IList<IWebElement> ErrorMessages => _driver.FindElements(By.XPath(Locators.ErrorMessages));
 
         public ResponseStatusCardPageObject(IWebDriver driver) : base(driver) { }
 
-
+        public bool IsInSuccessState() => Body.GetAttribute("class").Contains("success");
+        public bool HasSuccessMessageWithGivenText(string text) => SuccessMessage.Text == text;
     }
 }

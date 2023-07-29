@@ -8,6 +8,11 @@
             {
                 public static string Success => "Success";
             }
+
+            public static class Messages
+            {
+                public static string EntityUpdatedSuccessfully(string entityTypeName) => $"{entityTypeName} updated successfully";
+            }
         }
     }
 }

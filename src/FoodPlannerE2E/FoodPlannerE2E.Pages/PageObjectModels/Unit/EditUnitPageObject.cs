@@ -1,4 +1,5 @@
 ﻿using FoodPlannerE2E.Core.Configs.PageLocators.Unit;
+using OpenQA.Selenium.Interactions;
 
 namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
 {
@@ -19,6 +20,7 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Unit
         }
 
         public void SendForm() => SendButton.Click();
+        public void SendForm(int pauseInSeconds) => new Actions(_driver).MoveToElement(SendButton).Pause(TimeSpan.FromSeconds(pauseInSeconds)).SendKeys(Keys.Enter).Perform();
         public void ChangeFormEditability() => EditButton.Click();
         public void TriggerDeleteModal() => DeleteButton.Click();
         public void NavigateTo(uint id) => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/units/{id}");
