@@ -11,6 +11,8 @@
 
             public static class Messages
             {
+                public static string EntityWithIdNotFound => "Entity with the given id could not be found.";
+                public static string EntityAlreadyExists(string entityCurrentName) => $"Entity '{entityCurrentName}' already exists.";
                 public static string EntityUpdatedSuccessfully(string entityTypeName) => $"{entityTypeName} updated successfully";
             }
         }

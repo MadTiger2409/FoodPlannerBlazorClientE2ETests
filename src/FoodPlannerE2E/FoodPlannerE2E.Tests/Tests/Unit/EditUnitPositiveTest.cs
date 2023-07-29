@@ -12,7 +12,7 @@ namespace FoodPlannerE2E.Tests.Tests.Unit
         private string _unitNewName;
 
         [Test]
-        public void Should_Edit_Unit_When_Name_Is_Correct()
+        public void Should_Update_Unit_When_Name_Is_Correct()
         {
             EditUnitPage.ChangeFormEditability();
             EditUnitPage.InsertName(_unitNewName);
