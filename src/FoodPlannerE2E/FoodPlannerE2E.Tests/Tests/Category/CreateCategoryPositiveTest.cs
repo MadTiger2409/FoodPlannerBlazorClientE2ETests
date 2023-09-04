@@ -30,6 +30,8 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         [OneTimeSetUp]
         protected void TestSetup() => _categoriesListPageObject = new(Driver);
 
+        //TODO Add teardown to delete newly added category
+
         protected override void PrepareTestData()
         {
             base.PrepareTestData();

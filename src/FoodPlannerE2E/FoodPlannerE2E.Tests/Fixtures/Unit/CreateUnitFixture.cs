@@ -1,6 +1,5 @@
 ﻿using FoodPlannerE2E.Pages.PageObjectModels.Shared;
 using FoodPlannerE2E.Pages.PageObjectModels.Unit;
-using FoodPlannerE2E.Tests.Fixtures.Common;
 
 namespace FoodPlannerE2E.Tests.Fixtures.Unit
 {
