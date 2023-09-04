@@ -1,6 +1,5 @@
 {
   "mealTypeahead": "//input[@locator='plannedMealMealSelector']",
-  "typeaheadResults": "//div[@class='blazored-typeahead__results']",
   "mealErrorMessage": "//div[@locator='plannedMealItemError']",
   "ordinalNumberInput": "//input[@locator='plannedMealOrdinalNumberInput']",
   "OrdinalNumberErrorMessage": "//div[@locator='plannedMealOrdinalNumberError']",

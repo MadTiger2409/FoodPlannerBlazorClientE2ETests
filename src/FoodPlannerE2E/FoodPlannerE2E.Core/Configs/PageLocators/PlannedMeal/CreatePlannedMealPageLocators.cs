@@ -3,7 +3,6 @@
     public class CreatePlannedMealPageLocators
     {
         public string MealTypeahead { get; set; }
-        public string TypeaheadResults { get; set; }
         public string MealErrorMessage { get; set; }
         public string OrdinalNumberInput { get; set; }
         public string OrdinalNumberErrorMessage { get; set; }

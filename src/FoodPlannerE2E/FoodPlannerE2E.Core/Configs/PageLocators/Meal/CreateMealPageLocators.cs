@@ -6,7 +6,6 @@
         public string FormErrorMessages { get; set; }
         public string IngredientProductTypeahead { get; set; }
         public string IngredientProductErrorMessage { get; set; }
-        public string TypeaheadResults { get; set; }
         public string IngredientAmountNumberInput { get; set; }
         public string IngredientAmountErrorMessage { get; set; }
         public string IngredientUnitTypeahead { get; set; }
