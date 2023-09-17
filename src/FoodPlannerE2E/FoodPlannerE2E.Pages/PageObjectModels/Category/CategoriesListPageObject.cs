@@ -27,7 +27,7 @@ namespace FoodPlannerE2E.Pages.PageObjectModels.Category
 
         public void NavigateTo() => _driver.Navigate().GoToUrl($"{AppBaseHttpsUrl}/categories");
         public void SendForm() => SendButton.Click();
-        public bool ContainsUnitWithGivenName(string name) => Categories.Any(x => x.Text.Trim() == name.ToLowerInvariant());
+        public bool ContainsCategoryWithGivenName(string name) => Categories.Any(x => x.Text.Trim() == name.ToLowerInvariant());
         public bool HasNoDataError() => _driver.DoesPageHaveExactlyOneElement(By.XPath(Locators.NoDataErrorMessage));
         public bool HasNoDataErrorWithGivenText(string text) => NoDataError.Text == text;
         public bool HasNoDataErrorDisplayed() => NoDataError.Displayed;

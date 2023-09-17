@@ -1,5 +1,7 @@
 {
   "nameTextInput": "//input[@locator='productsNameText']",
   "sendButton": "//button[@locator='productsSendButton']",
-  "formErrorMessages": "//ul[@locator='productsListFormErrors']"
+  "formErrorMessages": "//ul[@locator='productsListFormErrors']",
+  "products": "//ul[@locator='entitiesList']/li",
+  "noDataErrorMessage": "//h6[@locator='productsNoDataError']"
 }

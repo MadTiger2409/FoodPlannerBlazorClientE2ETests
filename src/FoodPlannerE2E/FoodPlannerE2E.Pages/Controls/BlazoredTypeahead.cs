@@ -17,7 +17,7 @@
         }
 
         public void Search(string filter) => SearchboxInput.SendKeys(filter);
-        public void ClickOnArrow() => DownArrowButton.Click();
+        public void Expand() => DownArrowButton.Click();
         public void SelectByName(string name) => SearchResults.SingleOrDefault(x => x.Text == name).Click();
         public void SelectByIndex(int index) => SearchResults[index].Click();
     }

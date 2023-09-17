@@ -1,4 +1,5 @@
-﻿using FoodPlannerE2E.Pages.PageObjectModels.Category;
+﻿using FoodPlannerE2E.ApiManager.Enums;
+using FoodPlannerE2E.Pages.PageObjectModels.Category;
 using FoodPlannerE2E.Pages.TextsAndMessages.Shared;
 using FoodPlannerE2E.Tests.Fixtures.Category;
 
@@ -11,6 +12,7 @@ namespace FoodPlannerE2E.Tests.Tests.Category
         private string _newCategoryName;
         private string _actualTitleHeaderText;
 
+        private EntityApiService _entityApiService;
         private CategoriesListPageObject _categoriesListPageObject;
 
         [Test]
@@ -24,18 +26,26 @@ namespace FoodPlannerE2E.Tests.Tests.Category
             _categoriesListPageObject.NavigateTo();
 
             _actualTitleHeaderText.Should().Be(ResponseStatusCardPageMessages.Ui.Title.Success);
-            _categoriesListPageObject.ContainsUnitWithGivenName(_newCategoryName).Should().BeTrue();
+            _categoriesListPageObject.ContainsCategoryWithGivenName(_newCategoryName).Should().BeTrue();
         }
 
         [OneTimeSetUp]
-        protected void TestSetup() => _categoriesListPageObject = new(Driver);
+        public void TestSetup() => _categoriesListPageObject = new(Driver);
 
-        //TODO Add teardown to delete newly added category
 
-        protected override void PrepareTestData()
+        [OneTimeTearDown]
+        public void TestCleanup()
+        {
+            //TODO Add steps to delete newly added category
+        }
+
+
+        protected override async Task PrepareTestDataAsync()
         {
             base.PrepareTestData();
             _newCategoryName = ValueGenerator.GenerateString(10);
+
+            _entityApiService = new EntityApiService(HttpClientFactory.GetHttpClient(EntityType.Category));
         }
     }
 }
