@@ -8,7 +8,6 @@ namespace FoodPlannerE2E.Tests.Tests.Product
     [Category("Product")]
     public class CreateProductPositiveTest : CreateProductFixture
     {
-        private string _newProductName;
         private string _actualTitleHeaderText;
 
         private ProductsListPageObject _productsListPageObject;
@@ -16,7 +15,7 @@ namespace FoodPlannerE2E.Tests.Tests.Product
         [Test]
         public void Should_Create_ProductWhen_Category_Exists_And_Name_Is_Correct()
         {
-            CreateProductPage.InsertName(_newProductName);
+            CreateProductPage.InsertName(NewProductName);
 
             CreateProductPage.CategoryTypeahead.Search(Category.Name);
             CreateProductPage.CategoryTypeahead.SelectByIndex(0);
@@ -28,18 +27,12 @@ namespace FoodPlannerE2E.Tests.Tests.Product
             _productsListPageObject.NavigateTo();
 
             _actualTitleHeaderText.Should().Be(ResponseStatusCardPageMessages.Ui.Title.Success);
-            _productsListPageObject.ContainsProductWithGivenName(_newProductName).Should().BeTrue();
+            _productsListPageObject.ContainsProductWithGivenName(NewProductName).Should().BeTrue();
         }
 
         [OneTimeSetUp]
         protected void TestSetup() => _productsListPageObject = new(Driver);
 
         //TODO Add teardown to delete newly added product
-
-        protected override void PrepareTestData()
-        {
-            base.PrepareTestData();
-            _newProductName = ValueGenerator.GenerateString(10);
-        }
     }
 }

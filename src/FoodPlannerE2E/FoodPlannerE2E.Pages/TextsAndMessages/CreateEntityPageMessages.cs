@@ -10,6 +10,11 @@
                 public static string MustBeOfMinimumLength => "Name must be at least 2 characters long";
                 public static string CanBeOfMaximumLength => "Name can be up to 100 characters long";
             }
+
+            public static class Typeahead
+            {
+                public static string MustBeSelected(string entityName) => $"{entityName} must be selected";
+            }
         }
     }
 }

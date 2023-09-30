@@ -7,6 +7,7 @@ namespace FoodPlannerE2E.Tests.Fixtures.Product
 {
     public class CreateProductFixture : BaseTestFixture
     {
+        protected string NewProductName { get; private set; }
         protected CategoryResponse Category { get; private set; }
         protected EntityApiService EntityApiService { get; private set; }
         protected CreateProductPageObject CreateProductPage { get; private set; }
@@ -23,9 +24,10 @@ namespace FoodPlannerE2E.Tests.Fixtures.Product
 
         protected override async Task PrepareTestDataAsync()
         {
-            EntityApiService = new EntityApiService(HttpClientFactory.GetHttpClient(EntityType.Category));
+            NewProductName = ValueGenerator.GenerateString(10);
             var categoryName = ValueGenerator.GenerateString(10);
 
+            EntityApiService = new EntityApiService(HttpClientFactory.GetHttpClient(EntityType.Category));
             Category = await EntityApiService.CreateAsync<CategoryRequest, CategoryResponse>(new CategoryRequest { Name = categoryName });
         }
     }

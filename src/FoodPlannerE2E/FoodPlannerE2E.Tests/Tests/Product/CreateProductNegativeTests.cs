@@ -40,19 +40,37 @@ namespace FoodPlannerE2E.Tests.Tests.Product
         [Test]
         public void Should_Not_Create_Product_When_Name_Is_Too_Short()
         {
+            CreateProductPage.CategoryTypeahead.Expand();
+            CreateProductPage.CategoryTypeahead.SelectByName(Category.Name);
 
+            CreateProductPage.InsertName(_tooShortName);
+
+            CreateProductPage.SendForm();
+
+            CreateProductPage.HasNameErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.MustBeOfMinimumLength).Should().BeTrue();
         }
 
         [Test]
         public void Should_Not_Create_Product_When_Name_Is_Too_Long()
         {
+            CreateProductPage.CategoryTypeahead.Expand();
+            CreateProductPage.CategoryTypeahead.SelectByName(Category.Name);
 
+            CreateProductPage.InsertName(_tooLongName);
+
+            CreateProductPage.SendForm();
+
+            CreateProductPage.HasNameErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Name.CanBeOfMaximumLength).Should().BeTrue();
         }
 
         [Test]
         public void Should_Not_Create_Product_When_Category_Is_Not_Selected()
         {
+            CreateProductPage.InsertName(NewProductName);
 
+            CreateProductPage.SendForm();
+
+            CreateProductPage.HasCategoryErrorMessageWithGivenText(CreateEntityPageMessages.Validation.Typeahead.MustBeSelected("Category")).Should().BeTrue();
         }
 
         [SetUp]
@@ -61,6 +79,7 @@ namespace FoodPlannerE2E.Tests.Tests.Product
         protected override void PrepareTestData()
         {
             base.PrepareTestData();
+
             _emptyName = string.Empty;
             _whiteSpaces = ValueGenerator.Repeat(" ", 10);
             _tooShortName = ValueGenerator.GenerateString(1);
