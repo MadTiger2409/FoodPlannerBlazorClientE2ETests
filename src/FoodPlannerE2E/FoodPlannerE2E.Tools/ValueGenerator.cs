@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Reflection.Metadata.Ecma335;
+using System.Text;
 
 namespace FoodPlannerE2E.Tools
 {
@@ -19,5 +20,8 @@ namespace FoodPlannerE2E.Tools
 
             return stringBuilder.ToString();
         }
+
+        public static string Repeat(string valueToRepeat, int repetitions)
+            => new StringBuilder(valueToRepeat.Length * repetitions).Insert(0, valueToRepeat, repetitions).ToString();
     }
 }

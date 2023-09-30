@@ -1,4 +1,6 @@
-﻿namespace FoodPlannerE2E.Pages.Controls
+﻿using OpenQA.Selenium.Interactions;
+
+namespace FoodPlannerE2E.Pages.Controls
 {
     public class BlazoredTypeahead
     {
