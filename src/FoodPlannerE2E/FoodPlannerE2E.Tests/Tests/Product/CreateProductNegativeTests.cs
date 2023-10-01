@@ -76,6 +76,9 @@ namespace FoodPlannerE2E.Tests.Tests.Product
         [SetUp]
         public void EachTestSetup() => Driver.Navigate().Refresh();
 
+        [OneTimeTearDown]
+        public async Task TestCleanup() => await EntityApiService.DeleteAsync(Category.Id);
+
         protected override void PrepareTestData()
         {
             base.PrepareTestData();
